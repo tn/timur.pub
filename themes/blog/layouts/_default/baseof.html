@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {{ $favicon := resources.Get "images/favicon.svg" }}
+    <link rel="icon" type="image/svg+xml" href="{{ $favicon.Permalink }}">
+    {{ partial "head.html" . }}
+    {{ $style := resources.Get "scss/main.scss" | resources.ToCSS | resources.Fingerprint }}
+    <link defer rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ .Data.Integrity }}">
+
+    <title>{{ block "title" . }}
+      {{ .Site.Title }}
+    {{ end }}</title>
+  </head>
+  <body>
+    <!-- Code that all your templates share, like a header -->
+    {{ block "main" . }}
+      <!-- The part of the page that begins to differ between templates -->
+    {{ end }}
+    {{ block "footer" . }}
+    <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->
+    {{ end }}
+  </body>
+</html>

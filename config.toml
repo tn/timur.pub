@@ -1,0 +1,6 @@
+baseURL = 'http://timur.pub/'
+languageCode = 'ru-RU'
+defaultContentLanguage = 'ru'
+title = 'Паб'
+theme = 'blog'
+sectionPagesMenu = "main"

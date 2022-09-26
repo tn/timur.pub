@@ -1,0 +1,14 @@
+{{ define "title" }}
+  {{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+{{ define "main" }}
+  <main aria-role="main">
+    <header class="header inner">
+      <a class="logo" href="/">timur.pub</a>
+      <a href="https://timur.one">Автор <small>↗</small></a>
+    </header>
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    {{ partial "footer.html" }}
+  </main>
+{{ end }}
