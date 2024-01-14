@@ -5,10 +5,17 @@
   <main aria-role="main">
     <header class="header inner">
       <a class="logo" href="/">timur.pub</a>
-      <a href="https://timur.one">Автор <small>↗</small></a>
     </header>
     <h1>{{ .Title }}</h1>
     {{ .Content }}
+    {{ with .GitInfo }}
+      <div class="gitinfo">
+        <code>
+          <span class="date">{{ .CommitDate | time.Format ":date_medium" }}</span>
+          <a href="https://github.com/tn/timur.pub/commit/{{ .Hash }}" target="_blank" rel="noopener">🌐 {{ .AbbreviatedHash }}</a>
+        </code>
+      </div>
+    {{ end }}
     {{ partial "footer.html" }}
   </main>
 {{ end }}

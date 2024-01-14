@@ -1,6 +1,32 @@
-baseURL = 'http://timur.pub/'
+baseURL = 'https://timur.pub/'
 languageCode = 'ru-RU'
 defaultContentLanguage = 'ru'
-title = 'Паб'
+title = 'Тимур Нурисламов'
 theme = 'blog'
 sectionPagesMenu = "main"
+
+enableEmoji = true
+enableGitInfo = true
+enableRobotsTXT = true
+canonifyURLs = true
+
+[params]
+  [params.author]
+    name = "Тимур Нурисламов"
+  [params.social]
+    twitter = "tatardev"
+  description = "Пишу о своём опыте и рефлексирую на разные темы"
+  keywords = "тимур, нурисламов, блог, программирование, разработка, барселона, испания, стамбул, казань"
+
+[privacy]
+  [privacy.googleAnalytics]
+    anonymizeIP = true
+    respectDoNotTrack = true
+  [privacy.instagram]
+    simple = true
+  [privacy.twitter]
+    simple = true
+  [privacy.vimeo]
+    simple = true
+  [privacy.youtube]
+    privacyEnhanced = true

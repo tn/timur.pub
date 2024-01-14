@@ -2,24 +2,20 @@
     <main aria-role="main">
       <header class="header">
         <a class="logo" href="/">timur.pub</a>
-        <nav>
-          <a href="https://timur.one">Автор <small>↗</small></a>
-        </nav>
       </header>
       <div class="intro">
-        <!-- Note that the content for index.html, as a sort of list page, will pull from content/_index.md -->
         {{.Content}}
       </div>
       <div>
         <ul class="posts">
-          <!-- Ranges through content/posts/*.md -->
           {{ range ( where .Site.RegularPages "Type" "posts" | first 10 ) }}
             <li>
-                <a class="post" href="{{.Permalink}}">
-                  <span class="date">{{ .Date | time.Format ":date_long" }}</span>
-                  <h1>{{.Title}}</h1>
-                  <span>{{.Summary}}</span>
-                </a>
+                <h3>
+                  <a href="{{ .Permalink }}">
+                    <span>{{ .Title }}</span>
+                    <span class="date">{{ .Date | time.Format ":date_medium" }}</span>
+                  </a>
+                </h3>
             </li>
           {{ end }}
           </ul>
