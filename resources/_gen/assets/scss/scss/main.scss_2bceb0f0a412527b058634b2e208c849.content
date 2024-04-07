@@ -43,7 +43,7 @@ body {
 
 .intro {
   margin-bottom: 4rem;
-  padding: 1.6rem 3rem;
+  padding: 1.2rem 1.4rem;
   background-color: #F2F0E5;
   border-radius: 2rem; }
   .intro h2 {
@@ -52,7 +52,9 @@ body {
     font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
   .intro a {
     text-decoration: underline; }
-
+  @media screen and (min-width: 768px) {
+    .intro {
+      padding: 1.6rem 2rem; } }
 figure {
   margin-left: 0;
   margin-right: 0; }
@@ -136,12 +138,16 @@ a {
       font-size: inherit; }
     .posts li a {
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: space-between;
       margin-bottom: 1rem;
       text-decoration: none;
-      color: #205EA6;
-      border-bottom: 1px dotted rgba(87, 86, 83, 0.4); }
+      color: #205EA6; }
+      @media screen and (min-width: 768px) {
+        .posts li a {
+          flex-direction: row;
+          align-items: center;
+          border-bottom: 1px dotted rgba(87, 86, 83, 0.4); } }
       .posts li a:hover {
         text-decoration: none; }
       .posts li a span {
@@ -155,7 +161,8 @@ a {
       .posts li a .date {
         font-size: 1rem;
         font-weight: normal;
-        color: #6F6E69; }
+        color: #6F6E69;
+        white-space: nowrap; }
 
 @media (prefers-color-scheme: dark) {
   a {

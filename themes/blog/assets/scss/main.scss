@@ -15,6 +15,8 @@ $text-color-light: #100F0F;
 $link-color-light: #205EA6;
 $muted-text-color-light: #6F6E69;
 
+$desktop: 768px;
+
 
 html {
   font-size: 112.5%;
@@ -76,7 +78,7 @@ body {
 
 .intro {
   margin-bottom: 4rem;
-  padding: 1.6rem 3rem;
+  padding: 1.2rem 1.4rem;
   background-color: $card-background-light;
   border-radius: 2rem;
 
@@ -90,6 +92,10 @@ body {
   
   a {
     text-decoration: underline;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 1.6rem 2rem;
   }
 }
 
@@ -213,12 +219,17 @@ a {
 
     a {
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: space-between;
       margin-bottom: 1rem;
       text-decoration: none;
       color: $link-color-light;
-      border-bottom: 1px dotted fade-out($muted-text-color-dark, 0.6);
+
+      @media screen and (min-width: $desktop) {
+        flex-direction: row;
+        align-items: center;
+        border-bottom: 1px dotted fade-out($muted-text-color-dark, 0.6);
+      }
 
       &:hover {
         text-decoration: none;
@@ -242,6 +253,7 @@ a {
         font-size: 1rem;
         font-weight: normal;
         color: $muted-text-color-light;
+        white-space: nowrap;
       }
     }
   }
