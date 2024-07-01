@@ -11,12 +11,12 @@ enableRobotsTXT = true
 canonifyURLs = true
 
 [params]
-  [params.author]
-    name = "Тимур Нурисламов"
-  [params.social]
-    twitter = "tatardev"
+  sitename = "Тимур Нурисламов"
   description = "Пишу о своём опыте и рефлексирую на разные темы"
   keywords = "тимур, нурисламов, блог, программирование, разработка, барселона, испания, стамбул, казань"
+  author = "Тимур Нурисламов"
+  [params.social]
+    twitter = "tatardev"
 
 [privacy]
   [privacy.googleAnalytics]

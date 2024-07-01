@@ -18,6 +18,8 @@
     <title itemprop="name">{{ block "title" . }}
       {{ .Site.Title }}
     {{ end }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}" />
+    <meta name="keywords" content="{{ .Site.Params.keywords }}" />
   </head>
   <body>
     <!-- Code that all your templates share, like a header -->
