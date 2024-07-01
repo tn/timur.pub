@@ -66,6 +66,17 @@ body {
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  .header a:not(.logo) {
+    color: $text-color-dark;
+    border-bottom-color: fade-out($color: $text-color-dark, $amount: .9);
+
+    &:hover {
+      border-bottom-color: fade-out($color: $text-color-dark, $amount: .7)
+    }
+  }
+}
+
 .logo {
   color: inherit;
   font-size: 0;

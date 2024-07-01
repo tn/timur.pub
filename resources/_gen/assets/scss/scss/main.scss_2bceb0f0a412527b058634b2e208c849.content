@@ -36,6 +36,13 @@ body {
     .header a:not(.logo):hover {
       border-bottom-color: rgba(16, 15, 15, 0.3); }
 
+@media (prefers-color-scheme: dark) {
+  .header a:not(.logo) {
+    color: #fff;
+    border-bottom-color: rgba(255, 255, 255, 0.1); }
+    .header a:not(.logo):hover {
+      border-bottom-color: rgba(255, 255, 255, 0.3); } }
+
 .logo {
   color: inherit;
   font-size: 0; }
