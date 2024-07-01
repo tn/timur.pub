@@ -1,22 +1,22 @@
-$font-sans: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 $font-serif: "Source Serif 4", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, serif;
+$font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 
 // Dark
 $background-color-dark: #100F0F;
 $card-background-dark: #1C1B1A;
-$text-color-dark: #FFFCF0;
+$text-color-dark: #fff;
 $link-color-dark: #4385BE;
 $muted-text-color-dark: #575653;
 
 // Light
-$background-color-light: #FFFCF0;
-$card-background-light: #F2F0E5;
+$background-color-light: #fff;
+$card-background-light: #ededed;
 $text-color-light: #100F0F;
 $link-color-light: #205EA6;
 $muted-text-color-light: #6F6E69;
 
 $desktop: 768px;
-
 
 html {
   font-size: 112.5%;
@@ -52,8 +52,17 @@ body {
     padding: 0 0 2.8rem;
   }
 
-  a {
+  a:not(.logo) {
+    margin-left: 1rem;
+    font-size: 0.9rem;
     text-decoration: none;
+    font-weight: 600;
+    color: $text-color-light;
+    border-bottom: 2px solid fade-out($color: $text-color-light, $amount: .9);
+
+    &:hover {
+      border-bottom-color: fade-out($color: $text-color-light, $amount: .7)
+    }
   }
 }
 

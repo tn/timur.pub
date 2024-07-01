@@ -1,25 +1,29 @@
 {{ define "main" }}
-    <main aria-role="main">
-      <header class="header">
-        <a class="logo" href="/">timur.pub</a>
-      </header>
-      <div class="intro">
-        {{.Content}}
-      </div>
-      <div>
-        <ul class="posts">
-          {{ range ( where .Site.RegularPages "Type" "posts" | first 10 ) }}
-            <li>
-                <h3>
-                  <a href="{{ .Permalink }}">
-                    <span>{{ .Title }}</span>
-                    <span class="date">{{ .Date | time.Format ":date_medium" }}</span>
-                  </a>
-                </h3>
-            </li>
-          {{ end }}
-          </ul>
-      </div>
-      {{ partial "footer.html" }}
-    </main>
+<main aria-role="main">
+  <header class="header">
+    <a class="logo" href="/">timur.pub</a>
+    <div class="menu">
+      <a href="https://apps.apple.com/es/app/aspects/id6468970496" target="_blank" rel="noopener">🍏 Aspects ↗︎</a>
+      <a download="timur_nurislamov_cv.pdf" href="download/cv.pdf" class="cv">Моё CV</a>
+    </div>
+  </header>
+  <div class="intro">
+    {{.Content}}
+  </div>
+  <div>
+    <ul class="posts">
+      {{ range ( where .Site.RegularPages "Type" "posts" | first 10 ) }}
+      <li>
+        <h3>
+          <a href="{{ .Permalink }}">
+            <span>{{ .Title }}</span>
+            <span class="date">{{ .Date | time.Format ":date_medium" }}</span>
+          </a>
+        </h3>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ partial "footer.html" }}
+</main>
 {{ end }}
