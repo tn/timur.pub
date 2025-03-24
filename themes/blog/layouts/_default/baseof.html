@@ -8,16 +8,18 @@
     <meta name="googlebot" content="index,follow" />
     <meta name="author" content="Тимур Нурисламов" />
     {{ partial "google-fonts" . }}
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍺</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍺</text></svg>">
     {{ partial "head.html" . }}
-    {{ $style := resources.Get "scss/main.scss" | resources.ToCSS | resources.Fingerprint }}
+    {{ $style := resources.Get "scss/main.scss" | css.Sass | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ .Data.Integrity }}">
     {{ $js:= resources.Get "js/main.js" | resources.Minify | resources.Fingerprint }}
     <script src="{{ $js.RelPermalink }}" integrity="{{ .Data.Integrity }}"></script>
 
-    <title itemprop="name">{{ block "title" . }}
+    <title itemprop="name">
+      {{ block "title" . }}
       {{ .Site.Title }}
-    {{ end }}</title>
+      {{ end }}
+    </title>
     <meta name="description" content="{{ .Site.Params.description }}" />
     <meta name="keywords" content="{{ .Site.Params.keywords }}" />
   </head>

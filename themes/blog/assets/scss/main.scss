@@ -52,7 +52,7 @@ body {
     padding: 0 0 2.8rem;
   }
 
-  a:not(.logo) {
+  a:not(.logo):not(.project-logo) {
     margin-left: 1rem;
     font-size: 0.9rem;
     text-decoration: none;
@@ -67,7 +67,7 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
-  .header a:not(.logo) {
+  .header a:not(.logo):not(.project-logo) {
     color: $text-color-dark;
     border-bottom-color: fade-out($color: $text-color-dark, $amount: .9);
 
@@ -119,6 +119,32 @@ body {
   }
 }
 
+.download {
+  display: flex;
+  padding: 1.2rem 1.4rem;
+  background-color: $card-background-light;
+  border-radius: 2rem;
+  justify-content: center;
+
+  @media screen and (min-width: $desktop) {
+    padding: 1.6rem 2rem;
+  }
+}
+
+.app_store_button {
+  display: block;
+  width: 140px;
+  height: 40px;
+  margin: 0 auto;
+  font-size: 0;
+  line-height: 0;
+  text-indent: -9999px;
+  background-image: url(/images/app_store_light.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
 figure {
   margin-left: 0;
   margin-right: 0;
@@ -136,17 +162,27 @@ figure {
       color: $muted-text-color-dark;
     }
   }
+  
+  .app_store_button {
+    background-image: url(/images/app_store_dark.svg);
+  }
+}
+
+.container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.5rem 0;
+  max-width: 56rem;
+  margin: 0 auto;
+  min-height: 100vh;
+
+  @media screen and (min-width: $desktop) {
+    padding: 2rem 4rem 0;
+  }
 }
 
 main {
-  padding: 2rem 4rem;
-  max-width: 42rem;
-  margin: 0 auto;
-
-  @media (max-width: 768px) {
-    padding: 1rem;
-  }
-
   img {
     max-width: 100%;
   }
@@ -182,7 +218,10 @@ main {
 
 p {
   margin-bottom: 1rem;
-  font-family: $font-serif;
+  
+  main:not(.project) & {
+    font-family: $font-serif;
+  }
 }
 
 h1, h2, h3, h4, h5 {
@@ -290,6 +329,10 @@ a {
     background-color: $card-background-dark;
   }
 
+  .download {
+    background-color: $card-background-dark;
+  }
+
   .posts {
     li {
       a {
@@ -316,17 +359,22 @@ a {
 
 footer {
   display: flex;
-  margin: 3.6rem 0 0;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  height: 4.8rem;
+  margin: auto 0 0;
+  align-items: flex-end;
+  justify-content: center;
   font-size: 0.75rem;
   color: $muted-text-color-light;
 
-  span {
-    margin-right: 1rem;
-  }
-
   a {
     color: inherit;
+    margin-left: 1rem;
+  }
+
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 }

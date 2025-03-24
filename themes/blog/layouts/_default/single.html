@@ -2,24 +2,27 @@
   {{ .Title }} &ndash; {{ .Site.Title }}
 {{ end }}
 {{ define "main" }}
-  <main aria-role="main">
+  <div class="container">
     <header class="header inner">
       <a class="logo" href="/">timur.pub</a>
       <div class="menu">
-        <a href="https://apps.apple.com/es/app/minimal-app-launcher/id6670372044?l=en-GB" target="_blank" rel="noopener">📱 Minimal App Launcher ↗︎</a>
+        <a href="https://minimalapplauncher.framer.website" target="_blank" rel="noopener">📱 Minimal App Launcher ↗︎</a>
+        <!-- <a href="/void" target="_blank" rel="noopener">📷 Void ↗︎</a> -->
         <a download="timur_nurislamov_cv.pdf" href="download/cv.pdf" class="cv">Моё CV</a>
       </div>
     </header>
-    <h1>{{ .Title }}</h1>
-    {{ .Content }}
-    {{ with .GitInfo }}
-      <div class="gitinfo">
-        <code>
-          <span class="date">{{ .CommitDate | time.Format ":date_medium" }}</span>
-          <a href="https://github.com/tn/timur.pub/commit/{{ .Hash }}" target="_blank" rel="noopener">🌐 {{ .AbbreviatedHash }}</a>
-        </code>
-      </div>
-    {{ end }}
+    <main aria-roledescription="main">
+      <h1>{{ .Title }}</h1>
+      {{ .Content }}
+      {{ with .GitInfo }}
+        <div class="gitinfo">
+          <code>
+            <span class="date">{{ .CommitDate | time.Format ":date_medium" }}</span>
+            <a href="https://github.com/tn/timur.pub/commit/{{ .Hash }}" target="_blank" rel="noopener">🌐 {{ .AbbreviatedHash }}</a>
+          </code>
+        </div>
+      {{ end }}
+    </main>
     {{ partial "footer.html" }}
-  </main>
+  </div>
 {{ end }}

@@ -1,0 +1,20 @@
+{{ define "title" }}
+  {{ printf "%s" .Title }}
+{{ end }}
+
+{{ define "main" }}
+  <div class="container">
+    {{ partial "project-header.html" . }}
+    <main aria-roledescription="main" class="project">
+      <section>
+        {{ .Content }}
+      </section>
+      {{ with .Params.app_store }}
+        <div class="download">
+          <a href="{{ . }}" target="_blank" rel="noopener" class="app_store_button">Download on the App Store ↗︎</a>
+        </div>
+      {{ end }}
+    </main>
+    {{ partial "project-footer.html" . }}
+  </div>
+{{ end }}

@@ -1,0 +1,13 @@
+{{ $segments := split .File.Path "/" }}
+{{ $project := index $segments 0 }}
+
+<header class="header">
+  <a class="project-logo" href="/{{ $project }}">
+    {{ with .Params.logo }}
+      <img src="/{{ . }}" alt="{{ $.Title }} Logo" />
+    {{ end }}
+  </a>
+  {{ with .Params.app_store }}
+    <a href="{{ . }}" target="_blank" rel="noopener">App Store ↗︎</a>
+  {{ end }}
+</header>

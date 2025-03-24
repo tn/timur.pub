@@ -1,0 +1,16 @@
+<footer>
+  <div>
+    <span>Copyright &copy; {{ now.Format "2006" }} timur.pub</span>
+  </div>
+  <div>
+    {{ if .Pages }}
+      {{ range .Pages }}
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{ end }}
+    {{ else if .Parent }}
+      {{ range .Parent.Pages }}
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{ end }}
+    {{ end }}
+  </div>  
+</footer>
