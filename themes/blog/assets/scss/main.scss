@@ -96,29 +96,6 @@ body {
   }
 }
 
-.intro {
-  margin-bottom: 4rem;
-  padding: 1.2rem 1.4rem;
-  background-color: $card-background-light;
-  border-radius: 2rem;
-
-  h2 {
-    margin-top: 1rem;
-  }
-
-  p {
-    font-family: $font-sans;
-  }
-  
-  a {
-    text-decoration: underline;
-  }
-
-  @media screen and (min-width: $desktop) {
-    padding: 1.6rem 2rem;
-  }
-}
-
 .download {
   display: flex;
   padding: 1.2rem 1.4rem;
@@ -260,6 +237,29 @@ a {
 
   &:hover {
     text-decoration: underline;
+  }
+}
+
+.intro {
+  margin-bottom: 4rem;
+  padding: 1.2rem 1.4rem;
+  background-color: $card-background-light;
+  border-radius: 2rem;
+
+  h2 {
+    margin-top: 1rem;
+  }
+
+  p {
+    font-family: $font-sans;
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 1.6rem 2rem;
   }
 }
 
