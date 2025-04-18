@@ -18,6 +18,10 @@ canonifyURLs = true
   [params.social]
     twitter = "tatardev"
 
+[services]
+  [services.googleAnalytics]
+    id = "G-MK89MGF18F"
+
 [privacy]
   [privacy.googleAnalytics]
     anonymizeIP = true
