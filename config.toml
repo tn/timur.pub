@@ -6,7 +6,6 @@ theme = 'blog'
 sectionPagesMenu = "main"
 
 enableEmoji = true
-enableGitInfo = true
 enableRobotsTXT = true
 canonifyURLs = true
 

@@ -14,14 +14,6 @@
     <main aria-roledescription="main">
       <h1>{{ .Title }}</h1>
       {{ .Content }}
-      {{ with .GitInfo }}
-        <div class="gitinfo">
-          <code>
-            <span class="date">{{ .CommitDate | time.Format ":date_medium" }}</span>
-            <a href="https://github.com/tn/timur.pub/commit/{{ .Hash }}" target="_blank" rel="noopener">🌐 {{ .AbbreviatedHash }}</a>
-          </code>
-        </div>
-      {{ end }}
     </main>
     {{ partial "footer.html" }}
   </div>

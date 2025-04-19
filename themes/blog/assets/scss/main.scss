@@ -125,6 +125,7 @@ body {
 figure {
   margin-left: 0;
   margin-right: 0;
+  text-align: center;
 
   figcaption {
     font-size: 0.75rem;
@@ -139,7 +140,7 @@ figure {
       color: $muted-text-color-dark;
     }
   }
-  
+
   .app_store_button {
     background-image: url(/images/app_store_dark.svg);
   }
@@ -186,16 +187,9 @@ main {
   }
 }
 
-.gitinfo {
-  code {
-    font-size: 0.75rem;
-    color: $muted-text-color-light;
-  }
-}
-
 p {
   margin-bottom: 1rem;
-  
+
   main:not(.project) & {
     font-family: $font-serif;
   }
@@ -253,7 +247,7 @@ a {
   p {
     font-family: $font-sans !important;
   }
-  
+
   a {
     text-decoration: underline;
   }
@@ -303,10 +297,10 @@ a {
           &:first-child {
             padding-right: 5px;
           }
-  
+
           &:last-child {
             padding-left: 5px;
-          } 
+          }
         }
       }
 
